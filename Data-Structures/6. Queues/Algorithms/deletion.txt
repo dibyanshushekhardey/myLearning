@@ -1,0 +1,6 @@
+Step 1: IF FRONT = -1 OR FRONT > REAR
+            Write UNDERFLOW
+        ELSE
+            SET FRONT = FRONT+1
+[END OF IF]
+Step 2: EXIT
