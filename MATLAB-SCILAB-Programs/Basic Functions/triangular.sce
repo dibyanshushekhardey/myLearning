@@ -1,0 +1,10 @@
+a = 8;
+t = 0:(%pi / 4):(4 * %pi);
+y = a * sin(2*t);
+a = gca();
+a.x_location = "middle";
+plot(t, y);
+title('Triangular wave', 'Fontsize', 4);
+xlabel('t', 'Fontsize', 4);
+ylabel('x', 'Fontsize', 4);
+xgrid;
