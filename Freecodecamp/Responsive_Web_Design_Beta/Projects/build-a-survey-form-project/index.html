@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+    <header>
+    <h1 id="title">Survey Form</h1>
+    <p id="description">This is a project in FreeCodeCamp by creating a Survey Form. Check it Out! </p>
+
+  </header>
+
+  <form id="survey-form">
+      <fieldset>
+        <label id="name-label">Name:
+          <input type="text" id="name" placeholder="Give your Name" required>
+        </label>
+        <label id="email-label">Email:
+          <input type="email" id="email" placeholder="Enter your email" required>
+        </label>
+        <label id="number-label">Age:
+          <input type="number" id="number" min=10 max=80 placeholder="age">
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <!--Seleting branch-->
+        <p id="branch">What branch of engineering are you pursuing right now?</p>
+        <select id="dropdown" required>
+          <option value="">(select one)</option>
+          <option>Computer Science</option>
+          <option>Electronics and Telecommunication</option>
+          <option>Electronics and Communications</option>
+          <option>Civil</option>
+          <option>Electrical</option>
+          <option>Mechanical</option>
+          <option>Information Technology</option>
+          <option>Other</option>
+        </select>
+
+        <!--Specifying other branch-->
+        <p>If others please specify your stream</p>
+        <p>
+          <textarea id="branch" class="input-textarea" name="other branch" placeholder="Ener your branch here">
+        </textarea>
+        </p>
+      </fieldset>
+      <fieldset>
+
+        <!--Checkbox selection-->
+        <p>What would you like me to do next?</p>
+
+        <label><input name="prefer" value="challenges" type="checkbox" class="input-checkbox" />Portfolio</label>
+        <label><input name="prefer" value="challenges" type="checkbox" class="input-checkbox" />Quiz</label>
+        <label><input name="prefer" value="challenges" type="checkbox" class="input-checkbox" />Shopping Website</label>
+        <label><input name="prefer" value="challenges" type="checkbox" class="input-checkbox" />Stick to freeCodeCamp Projects</label>
+
+        <!--Recommending the form-->
+        <p>Will you recommend this form?</p>
+        <label>
+          <input name="user-recommend" value="yes" type="radio" class="input-radio" checked />Yes, will do!
+        </label>
+        <label>
+          <input name="user-recommend" value="maybe" type="radio" class="input-radio" checked />Maybe, don't know!
+        </label>
+        <label>
+          <input name="user-recommend" value="never" type="radio" class="input-radio" checked />Never, this is trash!
+        </label>
+      </fieldset>
+      <fieldset>
+        <input type="submit" id="submit" value="Submit" />
+      </fieldset>
+    </form>
+  </body>
+</html>
