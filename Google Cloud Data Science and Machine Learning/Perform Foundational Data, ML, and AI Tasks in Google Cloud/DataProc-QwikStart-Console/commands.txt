@@ -1,0 +1,63 @@
+// Confirm Cloud DataProc API is enabled
+
+To create a Dataproc cluster in Google Cloud, the Cloud Dataproc API must be enabled. To confirm the API is enabled:
+
+Click Navigation menu > APIs & Services > Library:
+
+Type Cloud Dataproc in the Search for APIs & Services dialog. The console will display the Cloud Dataproc API in the search results.
+
+Click on Cloud Dataproc API to display the status of the API. If the API is not already enabled, click the Enable button.
+
+If the API's enabled, you're good to go.
+
+----------------------------------------------------------------------------------
+// Create a cluster
+
+In the Cloud Platform Console, select Navigation menu > Dataproc > Clusters, then click Create cluster.
+
+Set the following fields for your cluster. Accept the default values for all other fields.
+
+Click Create to create the cluster.
+
+Your new cluster will appear in the Clusters list. It may take a few minutes to create, the cluster Status shows as Provisioning until the cluster is ready to use, then changes to Running.
+
+----------------------------------------------------------------------------------
+// Submit a job
+
+To run a sample Spark job:
+
+Click Jobs in the left pane to switch to Dataproc's jobs view, then click Submit job:
+
+Set the following fields to update Job. Accept the default values for all other fields.
+
+Click Submit
+
+Your job should appear in the Jobs list, which shows your project's jobs with its cluster, type, and current status. Job status displays as Running, and then Succeeded after it completes.
+
+----------------------------------------------------------------------------------
+// View the job output
+
+To see your completed job's output:
+
+Click the job ID in the Jobs list.
+
+Check Line wrapping or scroll all the way to the right to see the calculated value of Pi. Your output, with Line wrapping checked, should look something like this:
+
+Your job has successfully calculated a rough value for pi!
+
+Update a cluster
+To change the number of worker instances in your cluster:
+
+Select Clusters in the left navigation pane to return to the Dataproc Clusters view.
+Click example-cluster in the Clusters list. By default, the page displays an overview of your cluster's CPU usage.
+Click Configuration to display your cluster's current settings.
+
+Click Edit. The number of worker nodes is now editable.
+Enter 4 in the Worker nodes field.
+Click Save.
+
+Your cluster is now updated. Check out the number of VM instances in the cluster.
+
+To rerun the job with the updated cluster, you would click Jobs in the left pane, then click SUBMIT JOB.
+
+Set the same fields you set in the Submit a job section.
