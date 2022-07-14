@@ -1,0 +1,37 @@
+Slowness------------------------
+-if prog is running slow, close the extra running apps
+-unstall other unuseful apps
+ #if still slow:
+ -if hardware is not enough, so upgrade it
+ -improve bottleneck
+ -moniotor the resourses
+ -use the tolols available in op
+ 
+ use of top in linux systems to check the current state of the computer
+ Windows -resource monitor, performance moinitor
+ 
+ 
+ -there may some other causes so it is better to understand what's going on inside the computer
+ 
+ 
+ #how computer uses resources
+ cache
+ dns server- local cache
+ os- also uses cache in RAM
+ 
+ 
+#Slow web server
+ab -n 500 site.example.com/
+ssh webserver
+top
+for pid in $(pidof ffmpeg); do renice 19 $pid; done
+ab -n 500 site.example.com/
+ps ax  | less
+/ffmpelocate static/001.webm
+ls -l
+grep ffmpeg *
+vim deploy.sh
+clear 
+killall -STOP ffmpeg
+for pid in $(pidof ffmpeg); do while kill -CONT $pid; do sleep l; done
+ab -n 500 site.example.com/ (mean time 33 ms)
