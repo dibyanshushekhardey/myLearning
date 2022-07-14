@@ -1,0 +1,38 @@
+gcloud compute instances create blue --project=qwiklabs-gcp-01-b7a895063b6b --zone=us-central1-a --machine-type=e2-medium --network-interface=network-tier=PREMIUM,subnet=default --maintenance-policy=MIGRATE --service-account=711415988619-compute@developer.gserviceaccount.com --scopes=https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/trace.append --create-disk=auto-delete=yes,boot=yes,device-name=green,image=projects/debian-cloud/global/images/debian-10-buster-v20210916,mode=rw,size=10,type=projects/qwiklabs-gcp-01-b7a895063b6b/zones/us-central1-a/diskTypes/pd-balanced --no-shielded-secure-boot --shielded-vtpm --shielded-integrity-monitoring --reservation-affinity=any
+
+
+gcloud compute instances create green --project=qwiklabs-gcp-01-b7a895063b6b --zone=us-central1-a --machine-type=e2-medium --network-interface=network-tier=PREMIUM,subnet=default --maintenance-policy=MIGRATE --service-account=711415988619-compute@developer.gserviceaccount.com --scopes=https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/trace.append --create-disk=auto-delete=yes,boot=yes,device-name=green,image=projects/debian-cloud/global/images/debian-10-buster-v20210916,mode=rw,size=10,type=projects/qwiklabs-gcp-01-b7a895063b6b/zones/us-central1-a/diskTypes/pd-balanced --no-shielded-secure-boot --shielded-vtpm --shielded-integrity-monitoring --reservation-affinity=any
+
+sudo apt-get install nginx-light -y
+sudo nano /var/www/html/index.nginx-debian.html
+cat /var/www/html/index.nginx-debian.html.
+
+
+sudo apt-get install nginx-light -y
+sudo nano /var/www/html/index.nginx-debian.html
+cat /var/www/html/index.nginx-debian.html
+exit
+
+gcloud compute instances create test-vm --machine-type=f1-micro --subnet=default --zone=us-central1-a
+
+curl <Enter blue's internal IP here>
+curl -c 3 <Enter green's internal IP here>
+
+curl <Enter blue's external IP here>
+curl -c 3 <Enter green's external IP here>
+
+gcloud compute firewall-rules list
+
+gcloud compute firewall-rules delete allow-http-web-server
+
+gcloud auth activate-service-account --key-file credentials.json
+
+gcloud compute firewall-rules list
+
+gcloud compute firewall-rules delete allow-http-web-server
+
+gcloud compute firewall-rules list
+
+gcloud compute firewall-rules delete allow-http-web-server
+
+curl -c 3 <Enter blue's external IP here>

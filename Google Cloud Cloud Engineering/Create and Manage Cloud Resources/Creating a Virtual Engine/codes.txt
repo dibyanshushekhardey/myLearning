@@ -1,0 +1,6 @@
+gcloud auth list
+gcloud config list project
+
+
+gcloud compute instances get-serial-port-output instance-1
+gcloud compute reset-windows-password [instance] --zone us-central1-a --user [username]

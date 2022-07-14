@@ -1,0 +1,59 @@
+gcloud auth list
+
+gcloud config list project
+
+gcloud config get-value compute/zone
+gcloud config get-value compute/region
+
+gcloud compute project-info describe --project qwiklabs-gcp-02-a330c09271f6
+
+export PROJECT_ID=<your_project_ID>
+export ZONE=<your_zone>
+
+echo $PROJECT_ID
+echo $ZONE
+---------------------------------
+
+# This command computes the vm instance 
+
+gcloud compute instances create gcelab2 --machine-type n1-standard-2 --zone $ZONE
+
+----------------------------------
+gcloud compute instances create --help
+
+gcloud -h
+
+gcloud config --help
+
+gcloud help config
+
+gcloud config list
+
+gcloud config list --all
+
+gcloud components list
+
+-----------------------------
+Task 2
+
+sudo apt-get install google-cloud-sdk
+
+gcloud beta interactive
+
+gcloud compute instances describe <your_vm>
+
+exit
+
+----------------------------
+Task 3
+
+gcloud compute ssh gcelab2 --zone $ZONE
+
+exit
+
+--------------------------------
+Task 4
+cd $HOME
+
+vi ./.bashrc
+

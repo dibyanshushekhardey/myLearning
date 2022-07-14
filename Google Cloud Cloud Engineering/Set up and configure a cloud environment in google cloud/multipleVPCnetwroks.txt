@@ -1,0 +1,57 @@
+gcloud auth list
+gcloud config list project
+
+gcloud compute networks create managementnet --project=qwiklabs-gcp-00-229c816f1140 --subnet-mode=custom --mtu=1460 --bgp-routing-mode=regional && gcloud compute networks subnets create managementsubnet-us --project=qwiklabs-gcp-00-229c816f1140 --range=10.130.0.0/20 --network=managementnet --region=us-central1
+
+gcloud compute networks create privatenet --subnet-mode=custom
+
+gcloud compute networks subnets create privatesubnet-us --network=privatenet --region=us-central1 --range=172.16.0.0/24
+
+gcloud compute networks subnets create privatesubnet-eu --network=privatenet --region=europe-west4 --range=172.20.0.0/20
+
+gcloud compute networks list
+
+gcloud compute networks subnets list --sort-by=NETWORK
+
+gcloud compute firewall-rules create privatenet-allow-icmp-ssh-rdp --direction=INGRESS --priority=1000 --network=privatenet --action=ALLOW --rules=icmp,tcp:22,tcp:3389 --source-ranges=0.0.0.0/0
+
+gcloud compute firewall-rules list --sort-by=NETWORK
+
+gcloud compute instances create managementnet-us-vm --project=qwiklabs-gcp-00-229c816f1140 --zone=us-central1-f --machine-type=n1-standard-1 --network-interface=network-tier=PREMIUM,subnet=managementsubnet-us --maintenance-policy=MIGRATE --service-account=5453909456-compute@developer.gserviceaccount.com --scopes=https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/trace.append --create-disk=auto-delete=yes,boot=yes,device-name=managementnet-us-vm,image=projects/debian-cloud/global/images/debian-10-buster-v20210916,mode=rw,size=10,type=projects/qwiklabs-gcp-00-229c816f1140/zones/us-central1-f/diskTypes/pd-balanced --no-shielded-secure-boot --shielded-vtpm --shielded-integrity-monitoring --reservation-affinity=any
+
+gcloud compute --project=qwiklabs-gcp-00-229c816f1140 firewall-rules create managementnet-allow-icmp-ssh-rdp --direction=INGRESS --priority=1000 --network=managementnet --action=ALLOW --rules=tcp:22,tcp:3389,icmp --source-ranges=0.0.0.0/0
+
+gcloud compute instances create privatenet-us-vm --zone=us-central1-f --machine-type=n1-standard-1 --subnet=privatesubnet-us
+
+gcloud compute instances list --sort-by=ZONE
+
+ping -c 3 34.141.201.234
+
+ping -c 3 104.155.181.76
+ 
+ping -c 3 34.135.121.246
+
+ping -c 3 10.164.0.2
+
+ping -c 3 10.128.0.2
+
+ping -c 3 172.16.0.2
+
+gcloud compute instances create vm-appliance --project=qwiklabs-gcp-00-229c816f1140 --zone=us-central1-f --machine-type=n1-standard-4 --network-interface=network-tier=PREMIUM,subnet=privatesubnet-us --maintenance-policy=MIGRATE --service-account=5453909456-compute@developer.gserviceaccount.com --scopes=https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/trace.append --create-disk=auto-delete=yes,boot=yes,device-name=vm-appliance,image=projects/debian-cloud/global/images/debian-10-buster-v20210916,mode=rw,size=10,type=projects/qwiklabs-gcp-00-229c816f1140/zones/us-central1-f/diskTypes/pd-balanced --no-shielded-secure-boot --shielded-vtpm --shielded-integrity-monitoring --reservation-affinity=any
+
+
+gcloud compute instances create vm-appliance --project=qwiklabs-gcp-00-229c816f1140 --zone=us-central1-f --machine-type=n1-standard-4 --network-interface=network-tier=PREMIUM,subnet=privatesubnet-us --network-interface=network-tier=PREMIUM,subnet=mynetwork --maintenance-policy=MIGRATE --service-account=5453909456-compute@developer.gserviceaccount.com --scopes=https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/trace.append --create-disk=auto-delete=yes,boot=yes,device-name=vm-appliance,image=projects/debian-cloud/global/images/debian-10-buster-v20210916,mode=rw,size=10,type=projects/qwiklabs-gcp-00-229c816f1140/zones/us-central1-f/diskTypes/pd-balanced --no-shielded-secure-boot --shielded-vtpm --shielded-integrity-monitoring --reservation-affinity=any
+
+sudo ifconfig
+
+ping -c 3 <Enter privatenet-us-vm's internal IP here>
+
+ping -c 3 privatenet-us-vm
+
+ping -c 3 <Enter managementnet-us-vm's internal IP here>
+
+ping -c 3 <Enter mynet-us-vm's internal IP here>
+
+ping -c 3 <Enter mynet-eu-vm's internal IP here>
+
+ip route

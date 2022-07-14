@@ -1,0 +1,109 @@
+Tips and Steps
+
+Open your cloud console after entering your user name and password
+
+Task 1
+
+go to Compute Engine > VM Instances
+Click the SSH? button
+ 
+In the SSH Terminal run the following commands:
+
+cd /work/dm
+
+sed -i s/SET_REGION/us-east1/g prod-network.yaml
+
+gcloud deployment-manager deployments create prod-network --config=prod-network.yaml
+
+
+gcloud config set compute/zone us-east1-b
+
+gcloud container clusters create kraken-prod \
+          --num-nodes 2 \
+          --network kraken-prod-vpc \
+          --subnetwork kraken-prod-subnet
+
+gcloud container clusters get-credentials kraken-prod
+
+cd /work/k8s
+kubectl create -f deployment-prod-backend.yaml
+kubectl create -f deployment-prod-frontend.yaml
+kubectl get pods
+kubectl create -f service-prod-backend.yaml
+kubectl create -f service-prod-frontend.yaml
+kubectl get service
+
+(The above commands create kubernetes cluster and nodes in them to 2)
+
+Check progress 
+
+Task 2 
+
+gcloud config set compute/zone us-east1-b
+
+gcloud compute instances create kraken-admin --network-interface="subnet=kraken-mgmt-subnet" --network-interface="subnet=kraken-prod-subnet"
+
+
+gcloud config set compute/zone us-east1-b
+
+gcloud container clusters get-credentials spinnaker-tutorial
+
+DECK_POD=$(kubectl get pods --namespace default -l "cluster=spin-deck" -o jsonpath="{.items[0].metadata.name}")
+
+kubectl port-forward --namespace default $DECK_POD 8080:9000 >> /dev/null &
+
+Click on Navigation menu > Monitoring.
+
+Click Alerting from the left menu, then click Create Policy.
+
+Click Add Condition, and then set up the Metrics with the following parameters:
+
+Fields	Options
+Resource Type	GCE VM Instance
+Metric	CPU Utilization compute.googleapis.com/instance/cpu/utilization
+Filter	Choose instance id and paste the value copied from kraken-admin
+Threshold	0.5 for 1 minute
+
+
+Click ADD, and then add an email in the Notification setting.
+
+Check progress
+
+Task 3
+
+In the Console, click on Navigation menu > Kubernetes Engine > ServiceS & Ingress
+
+Search spin-deck.
+
+Click Port Forward at the end of the detail page.
+
+The Cloud Shell will launch automatically with the port forwarding command.
+
+Click the Web Preview icon at the top of the Cloud Shell window and select Preview on port 8080, to open the Spinnaker user interface.
+
+run the following commands in the cloud shell:
+
+gcloud config set compute/zone us-east1-b
+
+gcloud source repos clone sample-app
+
+cd sample-app
+
+touch a
+
+git config --global user.email "$(gcloud config get-value account)"
+
+git config --global user.name "Student"
+
+git commit -a -m "change"
+
+git tag v1.0.1
+
+git push --tags
+
+
+In the Console, in Cloud Build > History, the new build will appear in a minute.
+
+Return to the Spinnaker UI and click Pipelines to watch the pipeline start to deploy the image to production.
+
+Once the pipeline completes, the color of the sample application has changed from orange to blue in the canary deployment, click Check my progress to verify Task 3.

@@ -1,0 +1,66 @@
+// start cloud shell
+gcloud auth list
+gcloud config list project
+
+
+// pub/sub basics
+// create a topic
+gcloud pubsub topics create myTopic
+
+// create two more topics
+gcloud pubsub topics create Test1
+gcloud pubsub topics create Test2
+
+// seeing the topics
+gcloud pubsub topics list
+
+// cleanup delete test1 and test2
+gcloud pubsub topics delete Test1
+gcloud pubsub topics delete Test2
+
+// see the topic list
+gcloud pubsub topics list
+
+// create a subcription
+gcloud  pubsub subscriptions create --topic myTopic mySubscription
+
+// add another subscription to the topic
+gcloud  pubsub subscriptions create --topic myTopic Test1
+gcloud  pubsub subscriptions create --topic myTopic Test2
+
+// see the list of subscription
+gcloud pubub topics list-subscriptions myTopic
+
+// delete the test1 and test2 subscriptions
+gcloud pubsub subscriptions delete Test1
+gcloud pubsub subscriptions delete Test2
+
+// see the list of subscriptions
+gcloud pubsub topics list-subscriptions myTopic
+
+
+// Pub/sub publishing and pulling a single message
+
+// run the command to publish the message "hello" to the previously created topic
+gcloud pubsub topics publish myTopic --message "Hello"
+
+
+//Publish a few more messages to myTopic. Run the following commands (replacing <YOUR NAME> with your name and <FOOD> with a food you like to eat)
+gcloud pubsub topics publish myTopic --message "Publisher's name is <YOUR NAME>"
+gcloud pubsub topics publish myTopic --message "Publisher likes to eat <FOOD>"
+gcloud pubsub topics publish myTopic --message "Publisher thinks Pub/Sub is awesome"
+
+
+// use the pull command to get the messages from the topic
+// this is subscription based
+gcloud pubsub subscriptions pull mySubscription --auto-ack
+
+// run the command 4 times to see different outputs as per your message
+
+// pub/sub pulling all messages from subscriptions
+gcloud pubsub topics publish myTopic --message "Publisher is starting to get the hang of Pub/Sub"
+gcloud pubsub topics publish myTopic --message "Publisher wonders if all messages will be pulled"
+gcloud pubsub topics publish myTopic --message "Publisher will have to test to find out"
+
+//Wait a minute to let the topics get created. Run the pull command with the limit flag
+gcloud pubsub subscriptions pull mySubscription --auto-ack --limit=3
