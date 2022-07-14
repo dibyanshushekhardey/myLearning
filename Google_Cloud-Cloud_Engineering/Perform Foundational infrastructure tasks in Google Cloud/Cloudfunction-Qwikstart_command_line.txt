@@ -1,0 +1,52 @@
+// activate cloud shell
+
+gcloud auth list
+
+gcloud config list project
+
+
+// create a function
+// create gcf_hello_world directory
+mkdir gcf_hello_world
+//move to the directory
+cd gcf_hello_world
+// create and open index.js to edit
+nano index.js
+//copy the following to the index.js file
+/**
+* Background Cloud Function to be triggered by Pub/Sub.
+* This function is exported by index.js, and executed when
+* the trigger topic receives a message.
+*
+* @param {object} data The event payload.
+* @param {object} context The event metadata.
+*/
+exports.helloWorld = (data, context) => {
+const pubSubMessage = data;
+const name = pubSubMessage.data
+    ? Buffer.from(pubSubMessage.data, 'base64').toString() : "Hello World";
+
+console.log(`My Cloud Function: ${name}`);
+};
+
+
+// crreate cloud storage bucket
+// replace BUCKET_NAME with the bucket you create (unique name)
+gsutil mb -p [PROJECT_ID] gs://[BUCKET_NAME]
+
+// deploy the function
+
+gcloud functions deploy helloWorld \
+  --stage-bucket [BUCKET_NAME] \
+  --trigger-topic hello_world \
+  --runtime nodejs8
+
+// verify the status of the function
+gcloud functions describe helloWorld
+
+//test the function
+DATA=$(printf 'Hello World!'|base64) && gcloud functions call helloWorld --data '{"data":"'$DATA'"}'
+
+// view logs
+
+gcloud functions logs read helloWorld
