@@ -1,0 +1,15 @@
+format compact
+%usain bolt world record
+%define meter
+meter = 100;
+%define time in seconds
+time = 9.58;
+speed = meter/time;
+hundred = speed * 18/5
+% kenyan eliud kpchoge world record calculation
+%distance in meters
+meter2 = 42195;
+%time in seconds
+time2 = 7299;
+speed2 = meter2/time2;
+marathon = speed2*18/5

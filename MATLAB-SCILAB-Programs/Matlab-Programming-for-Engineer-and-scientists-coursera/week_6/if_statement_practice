@@ -1,0 +1,10 @@
+function out = picker(condition, int1, int2)
+if ( condition == true)
+    out = int1;
+else
+    out = int2;
+end
+
+%code to call function
+out = picker(true,1,2)
+out = picker(false,1,2)

@@ -1,0 +1,6 @@
+function T = trio(n,m)
+    T = [ones(n,m);2*ones(n,m);3*ones(n,m)]
+end
+
+%code to call your function
+T = trio(2,4)

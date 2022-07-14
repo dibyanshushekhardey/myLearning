@@ -1,0 +1,7 @@
+function [mmr, mmm] = minimax(A)
+    mmr = max(A') - min(A') 
+    mmm = max(A, [], 'all') - min(A, [], 'all')
+end
+
+%code to call function
+[mmr, mmm] = minimax([1:4;5:8;9:12])
