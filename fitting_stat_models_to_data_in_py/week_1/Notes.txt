@@ -1,0 +1,34 @@
+Fiiting models to data- Goal-to help answer research questions 
+Fit models to data not the other way around
+
+Reason---
+Estimaye distribution properties of variables
+summarize relationships
+predict value of the variables of intrerested conditional on vales on other predictor variables
+-characterisation prediction uncertainty
+
+Parametric models
+-suggest variable of interest follows certain probability model
+-estimate parameters that define models eg mean and variance
+estimater model parameters + sampling variance = make inference abouyt the paramenters
+
+idea of assessing model fit- does the modeel fits the data
+
+eg taken - test performance and age
+goals-
+-estimate marginal mean of performance across the all ages
+-''''''''''''''''''''''''''''''''''''''conditional on age
+
+Mean onlyt model
+-assume normal distribution pattern(good model, mean var)
+-mean dfined by wuadritic func of age
+a + b *age + c * (age ^2)
+n = 200
+-Hist and Q-Q plot
+-scatter plot
+regression model---
+perf = m + e  (m = marginal mean, e = rand error)
+#err norm dist with mean and var
+m = 4.57
+se = 0.10
+var = 1.82
