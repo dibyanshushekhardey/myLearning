@@ -1,0 +1,221 @@
+$ cd introduction_to_git_and_github/
+
+Hp@DESKTOP-2KN7JIJ MINGW64 ~/introduction_to_git_and_github (master)
+$ git remte -v
+git: 'remte' is not a git command. See 'git --help'.
+
+The most similar command is
+        remote
+
+Hp@DESKTOP-2KN7JIJ MINGW64 ~/introduction_to_git_and_github (master)
+$ git remote -v
+origin  https://github.com/dibyanshushekhardey/introduction_to_git_and_github.git (fetch)
+origin  https://github.com/dibyanshushekhardey/introduction_to_git_and_github.git (push)
+
+Hp@DESKTOP-2KN7JIJ MINGW64 ~/introduction_to_git_and_github (master)
+$ git remote show origin
+* remote origin
+  Fetch URL: https://github.com/dibyanshushekhardey/introduction_to_git_and_github.git
+  Push  URL: https://github.com/dibyanshushekhardey/introduction_to_git_and_github.git
+  HEAD branch: master
+  Remote branch:
+    master tracked
+  Local branch configured for 'git pull':
+    master merges with remote master
+  Local ref configured for 'git push':
+    master pushes to master (up to date)
+
+Hp@DESKTOP-2KN7JIJ MINGW64 ~/introduction_to_git_and_github (master)
+$ git branch -r
+  origin/HEAD -> origin/master
+  origin/master
+
+Hp@DESKTOP-2KN7JIJ MINGW64 ~/introduction_to_git_and_github (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+Hp@DESKTOP-2KN7JIJ MINGW64 ~/introduction_to_git_and_github (master)
+$ git remote show origin
+* remote origin
+  Fetch URL: https://github.com/dibyanshushekhardey/introduction_to_git_and_github.git
+  Push  URL: https://github.com/dibyanshushekhardey/introduction_to_git_and_github.git
+  HEAD branch: master
+  Remote branch:
+    master tracked
+  Local branch configured for 'git pull':
+    master merges with remote master
+  Local ref configured for 'git push':
+    master pushes to master (up to date)
+
+Hp@DESKTOP-2KN7JIJ MINGW64 ~/introduction_to_git_and_github (master)
+$ git fetch
+
+Hp@DESKTOP-2KN7JIJ MINGW64 ~/introduction_to_git_and_github (master)
+$ git checkout
+Your branch is up to date with 'origin/master'.
+
+Hp@DESKTOP-2KN7JIJ MINGW64 ~/introduction_to_git_and_github (master)
+$ git log
+commit 380069f156eb00506ea94046d2437a1fb521a330 (HEAD -> master, origin/master, origin/HEAD)
+Author: dibyanshushekhardey <dibyanshushekhardey@gmail.com>
+Date:   Thu Jul 23 00:30:38 2020 +0530
+
+    Add ine README.md file in the account
+
+commit a62168a777197f5c9939fd1e600a8674a2755987
+Author: Dibyanshu Shekhar Dey <66998557+dibyanshushekhardey@users.noreply.github.com>
+Date:   Wed Jul 22 22:54:07 2020 +0530
+
+    Create README
+
+commit 3faa8f33f682f52c7fdc733cfca6a0f1430dc38b
+Author: Dibyanshu Shekhar Dey <66998557+dibyanshushekhardey@users.noreply.github.com>
+Date:   Tue Jul 21 18:51:14 2020 +0530
+
+    Create assignment.sh
+
+commit f958be8d7aa4db2e7270f83cbd6da8329577693c
+Author: Dibyanshu Shekhar Dey <66998557+dibyanshushekhardey@users.noreply.github.com>
+Date:   Tue Jul 21 18:50:35 2020 +0530
+
+    Update git_command.sh
+
+commit ce824d8eee12f445046b00d8893d7fca719790f5
+Author: Dibyanshu Shekhar Dey <66998557+dibyanshushekhardey@users.noreply.github.com>
+Date:   Tue Jul 21 15:11:28 2020 +0530
+
+    Create git_command.sh
+
+commit 3781f358070cc07c481ec8e5f25ab0b4c3972bc9
+Author: Dibyanshu Shekhar Dey <66998557+dibyanshushekhardey@users.noreply.github.com>
+Date:   Mon Jul 20 19:38:29 2020 +0530
+
+    Create assignment.sh
+
+commit 037fd00add3224b4db7d91ac2b58247e4f57f384
+Author: Dibyanshu Shekhar Dey <66998557+dibyanshushekhardey@users.noreply.github.com>
+Date:   Mon Jul 20 19:26:40 2020 +0530
+
+    Add files via upload
+
+commit 4ae20c1bce8de380d08249511a5f85ae42a35a72
+Author: Dibyanshu Shekhar Dey <66998557+dibyanshushekhardey@users.noreply.github.com>
+Date:   Mon Jul 20 19:25:43 2020 +0530
+
+    Create new
+
+commit 44d54a0d45b016a4a9b15d530ac808775a635af3
+Author: Dibyanshu Shekhar Dey <66998557+dibyanshushekhardey@users.noreply.github.com>
+Date:   Mon Jul 20 19:24:11 2020 +0530
+
+    Create git.sh
+
+commit efea8adc9ac41dad7bfcfb9d2f951b4d1ddb67f5
+Author: Dibyanshu Shekhar Dey <66998557+dibyanshushekhardey@users.noreply.github.com>
+Date:   Sun Jul 19 21:01:28 2020 +0530
+
+    Create cpu_usage_fixed.py
+
+commit 1c72161438ad0c059bff8ab65cbdee724469e681
+Author: Dibyanshu Shekhar Dey <66998557+dibyanshushekhardey@users.noreply.github.com>
+Date:   Sun Jul 19 21:01:09 2020 +0530
+
+    Create cpu_usage.py
+
+commit 26dddc97013637b3437c6947ecdc16d61b27bf86
+Author: Dibyanshu Shekhar Dey <66998557+dibyanshushekhardey@users.noreply.github.com>
+Date:   Sun Jul 19 20:59:37 2020 +0530
+
+    Create cpu_usagefixed.patch
+
+commit 1c3a8397a96f40d30e39fae0809e6b2d5eb18ea6
+Author: Dibyanshu Shekhar Dey <66998557+dibyanshushekhardey@users.noreply.github.com>
+Date:   Sun Jul 19 20:58:42 2020 +0530
+
+    Add files via upload
+
+commit d5c085e209bbc7750d74f52c3c0d7d9120a2d4b1
+Author: Dibyanshu Shekhar Dey <66998557+dibyanshushekhardey@users.noreply.github.com>
+Date:   Sun Jul 19 20:55:58 2020 +0530
+
+    Create pyhton_and_otherfiles
+
+commit 7b9735e2236107b83484ece86f2947cd93b115d0
+Author: Dibyanshu Shekhar Dey <66998557+dibyanshushekhardey@users.noreply.github.com>
+Date:   Sun Jul 19 20:55:38 2020 +0530
+
+    Delete codes_of_before_vc
+
+commit d01a8b83c143716d72ccaea5d7749bf152745c7f
+Author: Dibyanshu Shekhar Dey <66998557+dibyanshushekhardey@users.noreply.github.com>
+Date:   Sun Jul 19 20:54:12 2020 +0530
+
+    Create codes_of_before_vc
+
+commit b47770837d236a4d3d4d39a58ce1d2a2dcaf4aac
+Author: Dibyanshu Shekhar Dey <66998557+dibyanshushekhardey@users.noreply.github.com>
+Date:   Sun Jul 19 20:49:42 2020 +0530
+
+    Add files via upload
+
+commit ecdd815cfe5646ec31b8e3461aa471ee2d9200c5
+Author: Dibyanshu Shekhar Dey <66998557+dibyanshushekhardey@users.noreply.github.com>
+Date:   Sun Jul 19 20:49:09 2020 +0530
+
+    Create before_version_control.sh
+
+commit 2c812efa7e18b226c297b56e968a1ff446903147
+Author: Dibyanshu Shekhar Dey <66998557+dibyanshushekhardey@users.noreply.github.com>
+Date:   Sun Jul 19 20:43:15 2020 +0530
+
+    Update and rename readme to diff_and_patch_cheatsheet.txt
+
+commit fa6eb50849ca07981e75e6dbc26a4d84139c5615
+Author: Dibyanshu Shekhar Dey <66998557+dibyanshushekhardey@users.noreply.github.com>
+Date:   Sun Jul 19 18:19:11 2020 +0530
+
+    Create readme
+
+commit ad2848fbc3f20453e65534e915b36f6d676e99cd
+Author: Dibyanshu Shekhar Dey <66998557+dibyanshushekhardey@users.noreply.github.com>
+Date:   Sun Jul 19 18:18:46 2020 +0530
+
+    Initial commit
+
+Hp@DESKTOP-2KN7JIJ MINGW64 ~/introduction_to_git_and_github (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+Hp@DESKTOP-2KN7JIJ MINGW64 ~/introduction_to_git_and_github (master)
+$ git merge origin/master
+Already up to date.
+
+Hp@DESKTOP-2KN7JIJ MINGW64 ~/introduction_to_git_and_github (master)
+$ git fetch
+
+Hp@DESKTOP-2KN7JIJ MINGW64 ~/introduction_to_git_and_github (master)
+$ git merge
+Already up to date.
+
+Hp@DESKTOP-2KN7JIJ MINGW64 ~/introduction_to_git_and_github (master)
+$ git pull
+Already up to date.
+
+Hp@DESKTOP-2KN7JIJ MINGW64 ~/introduction_to_git_and_github (master)
+$ git remote show origin
+* remote origin
+  Fetch URL: https://github.com/dibyanshushekhardey/introduction_to_git_and_github.git
+  Push  URL: https://github.com/dibyanshushekhardey/introduction_to_git_and_github.git
+  HEAD branch: master
+  Remote branch:
+    master tracked
+  Local branch configured for 'git pull':
+    master merges with remote master
+  Local ref configured for 'git push':
+    master pushes to master (up to date)
