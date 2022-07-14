@@ -1,0 +1,22 @@
+What is scale? 
+It means achieving lasrger amount of work with same amnt of effort
+scalable system is flexible one
+automation is a tool to keep up with the enlarging problems 
+automations helps in scale
+
+Configuration management
+it handles all the configs in the devices and services
+-def set pof rules
+-process the rules
+-aims to solve scaling problem
+-systematics repeatable manner
+-makes chsanges efficient
+-automatioc error connection built in too
+- puupet chosen here
+
+VCS 
+infrastructure as code 
+-when all of the configuration necessary to deploy and manage a node in the infrastructure is stored in version control.
+ias in cloud
+-ability to easily see what configs were made
+-consistent versioned reliable repeatable nodes 

@@ -1,0 +1,31 @@
+Puppet 
+-cross platform tool
+-open sourced
+-most used tool in industry
+-puppet 6
+rules of puppet
+syntax of puppet-
+
+class sudo {
+  package { 'sudo':
+    ensure => present,
+  }
+ }
+
+resources - basic unit for modelling config
+
+puppet classes
+
+class ntp{
+  packager { 'ntp':
+    ensure => latest,
+  }
+  file { '/etc/ntp.conf':
+    source => 'puppet:///modules/ntp/ntp.conf'
+    replace => true,
+  }
+  service { 'ntp':
+    enable => true,
+    ensure => running,
+  }
+}

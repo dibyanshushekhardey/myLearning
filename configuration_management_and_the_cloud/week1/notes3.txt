@@ -1,0 +1,33 @@
+domain specific language
+eg puppet
+variables conditional_statements functions are dsl of puppet
+facts variables that represent the characteristics of the system. When the Puppet agent runs
+
+is $facts['is_virtual']{
+  package { 'smartmontools':
+    ensure => purged,
+    }
+ } else {
+  package { 'smartmontools':
+    ensure => installed,
+    }
+  }
+driving principles of configuration management
+python - procedural 
+-------------------------------------
+idempotent action
+an idempotent action can be performed over and over again without changing the system after the first time the action was performed, and with no unintended side effects
+
+file { '/etc/issue':
+  mode   => '0644',
+  content => "Internal system \l \n", 
+}
+
+exception exec resource
+
+use of onlyif in exec resource to turn into idempotent
+
+exec { 'move example file':
+  command => 'mv/home/user/example.txt /home/user/Desktop',
+  onlyif => 'test -e /home/user/example.txt',
+}
