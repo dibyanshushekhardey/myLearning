@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+
+int main()
+{
+    int secretNumber = 5;
+    int guess;
+
+    while( guess != secretNumber){
+        printf("Enter your guess number: ");
+        scanf("%d", &guess);
+    }
+    printf("You Win");
+    return 0;
+}
