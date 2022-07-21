@@ -17,3 +17,23 @@ class Solution:
                     res[ind]=nums2[j]
                     break
         return res
+
+    
+    # stack implementation
+    class Solution:
+    def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        # hashmap
+        nums={n:i for i, n in enumerate(nums1)}
+        res=[-1]*len(nums1)
+        
+        stack=[]
+        for i in range(len(nums2)):
+            cur = nums2[i]
+            while stack and cur > stack[-1]:
+                val=stack.pop()
+                ind = nums[val]
+                res[ind]=cur
+            if cur in nums:
+                stack.append(cur)
+        return res                
+       
