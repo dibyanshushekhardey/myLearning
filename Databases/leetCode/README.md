@@ -5,4 +5,6 @@
 - 196 https://leetcode.com/problems/delete-duplicate-emails/
 - 627 https://leetcode.com/problems/swap-salary/
 - 1873 https://leetcode.com/problems/calculate-special-bonus/
+- 177 https://leetcode.com/problems/nth-highest-salary/
+- 176 https://leetcode.com/problems/second-highest-salary/
 - 
