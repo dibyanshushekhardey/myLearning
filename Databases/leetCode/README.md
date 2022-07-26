@@ -14,4 +14,5 @@
 - 620 https://leetcode.com/problems/not-boring-movies/
 - 596 https://leetcode.com/problems/classes-more-than-5-students/
 - 586 https://leetcode.com/problems/customer-placing-the-largest-number-of-orders/
+- 511 https://leetcode.com/problems/game-play-analysis-i/
 - 
