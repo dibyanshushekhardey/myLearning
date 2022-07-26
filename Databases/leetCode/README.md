@@ -12,4 +12,5 @@
 - 182 https://leetcode.com/problems/duplicate-emails/
 - 1050 https://leetcode.com/problems/actors-and-directors-who-cooperated-at-least-three-times/
 - 620 https://leetcode.com/problems/not-boring-movies/
+- 596 https://leetcode.com/problems/classes-more-than-5-students/
 - 
