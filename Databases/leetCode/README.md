@@ -11,4 +11,5 @@
 - 181 https://leetcode.com/problems/employees-earning-more-than-their-managers/
 - 182 https://leetcode.com/problems/duplicate-emails/
 - 1050 https://leetcode.com/problems/actors-and-directors-who-cooperated-at-least-three-times/
--
+- 620 https://leetcode.com/problems/not-boring-movies/
+- 
