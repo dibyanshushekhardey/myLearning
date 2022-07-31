@@ -10,4 +10,9 @@
 - 175 https://leetcode.com/problems/combine-two-tables/
 - 181 https://leetcode.com/problems/employees-earning-more-than-their-managers/
 - 182 https://leetcode.com/problems/duplicate-emails/
+- 1050 https://leetcode.com/problems/actors-and-directors-who-cooperated-at-least-three-times/
+- 620 https://leetcode.com/problems/not-boring-movies/
+- 596 https://leetcode.com/problems/classes-more-than-5-students/
+- 586 https://leetcode.com/problems/customer-placing-the-largest-number-of-orders/
+- 511 https://leetcode.com/problems/game-play-analysis-i/
 - 
